@@ -9,8 +9,6 @@ export const images = () => {
             message: "Error: <%= error.message %>"
         })))
         .pipe(app.plugins.newer(app.path.build.images))
-
-        // .pipe(webp())
         .pipe(app.plugins.if(
             app.isBuild,
             webp()
