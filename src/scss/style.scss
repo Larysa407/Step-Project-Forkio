@@ -10,4 +10,11 @@
 
 @import "main.scss";
 
-@import "footer.scss"
+@import "footer.scss";
+
+
+body {
+    min-width: 320px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
