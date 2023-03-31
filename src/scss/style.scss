@@ -1,5 +1,6 @@
 @import "reset.scss";
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&display=swap');
 
 @import "variables.scss";
 
@@ -8,13 +9,24 @@
 
 @import  "header.scss";
 
+@import "main.scss";
+
 @import "about.scss";
 
 @import "footer.scss";
 
+// body {
+//     min-width: 320px;
+//     max-width: 1200px;
+//     margin: 0 auto;
+//   }
 
-body {
-    min-width: 320px;
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+}
+.container {
     max-width: 1200px;
     margin: 0 auto;
-  }
+    padding: 0 10px;
+}
