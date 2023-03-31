@@ -1,0 +1,159 @@
+.page {
+    font-family: 'Montserrat', sans-serif;
+}
+// section editor
+.editor {
+    padding: 129px 0 70px 0;
+
+    &__title {
+        font-weight: 700;
+        font-size: 54px;
+        line-height: 100%;
+        color: #635C73;
+        text-transform: uppercase;
+        text-align: center;
+        @media (max-width: $tablet) {
+            font-size: 42px;
+        }
+        @media (max-width: $mobile) {
+            font-size: 26px;
+            line-height: 107%;
+        }
+    }
+
+    &__text {
+        font-family: 'Lato', sans-serif;
+        font-size: 21px;
+        line-height: 152%;
+        color: #323232;
+        margin: 35px auto 0 auto;
+        max-width: 861px;
+        text-align: center;
+        @media (max-width: $tablet) {
+            max-width: 689px;
+            margin-top: 33px;
+        }
+        @media (max-width: $mobile) {
+            margin-top: 27px;
+            font-size: 14px;
+            line-height: 142%;
+            margin-top: 36px;
+            max-width: 276px;
+        }
+    }
+
+    &__buttons {
+        margin-top: 13px;
+        display: flex;
+        justify-content: center;
+        column-gap: 10px;
+        @media (max-width: $tablet) {
+            margin-top: 24px;
+        }
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+    }
+
+    &__button {
+        font-size: 12px;
+        font-weight: 700;
+        color: #24292f;
+        background-color: $accent-color;
+        border-radius: 5px;
+        border: 1px solid rgba(27,31,36,0.15);
+    }
+}
+.editor-button {
+    @include flex-center;
+    padding: 5px 10px;
+    svg {
+        fill: #656d76;
+    }
+    &:hover {
+        background-color: #f3f4f6;
+    }
+    &__text {
+        margin-left: 5px;
+    }
+
+    &__number {
+        border-radius: 50%;
+        background-color: rgba(27,31,36,0.08);
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        @include flex-center;
+    }
+
+    &__dropdown {
+        margin-left: 5px;
+        height: 0;
+        width: 0;
+          border-left: 5px solid transparent;
+          border-right: 5px solid transparent;
+          border-top: 5px solid #333;
+    }
+}
+// section what
+.what {
+    background-color: #F4F4F4;
+    padding: 100px 0 71px 0;
+    &__container {
+        display: flex;
+        column-gap: 49px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        row-gap: 33px;
+        flex: 0 0 540px;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 104%;
+        color: #8D81AC;
+        margin-bottom: 19px;
+    }
+    &__image {
+        position: relative;
+        width: 700px;
+        height: 519px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+.what-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+
+    &__title {
+        font-size: 16px;
+        line-height: 131%;
+        color: #323232;
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 150%;
+        color: #848E97;
+        max-width: 405px;
+    }
+}
