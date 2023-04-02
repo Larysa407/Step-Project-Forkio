@@ -2,54 +2,23 @@
     background: url(../img/intro.png) no-repeat;
     background-position: center center;
     background-size: cover;
-    font-family: 'Montserrat', sans-serif;  
 }
 
 .header-menu__link{
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 18px;
+    @include fontMontserrat(700, 16px, 18px);
     color: $primary-color;
+    &:hover{
+        color: $accent-color;
+    }
 }
 
- 
-.btn {
+.btn{
     @include btn;
-}
-
-.large--screen--btn{
-    display: none;
-}
-
-.big{
-    display: none;
-}
-
-.intro-titles{
-    @include flex-center;
-    flex-direction: column;
-    padding: 0 10px;
-}
-
-.intro__title{
-    padding-top: 50px;
-    padding-bottom: 19px;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 48px;
-    color: $accent-color;
-    text-align: center;
-}
-
-.intro__subtitle{
-    padding-bottom: 18px;    
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    color: $primary-color;
-    max-width: 80%;
-    text-align: center;
-    text-transform: capitalize;
+    &:hover{
+        color: $primary-color;
+        background-color: $accent-color;
+        border: 1px solid $primary-color;
+    }
 }
 
 .intro-button{
@@ -62,26 +31,47 @@
     min-width: 290px;
 }
 
+.large--screen--btn{
+    display: none;
+}
+
+.intro-titles{
+    @include flex-center;
+    flex-direction: column;
+    padding: 0 10px;
+}
+.intro__title{
+    padding-top: 50px;
+    padding-bottom: 19px;
+    @include fontMontserrat(700, 48px, 48px);
+    color: $accent-color;
+    text-align: center; 
+}
+.intro__subtitle{
+    max-width: 80%;
+    padding-bottom: 18px;
+    @include fontMontserrat(400, 18px, 24px);    
+    color: $primary-color;
+    text-align: center;
+    text-transform: capitalize;
+}
 .small--title{
+    @include fontMontserrat(400, 14px, 14px);
     padding-bottom: 394px;
-    @include small-font;
     color: #848E97;
     text-transform: uppercase;
 }
 
+
 .intro__text{
-    display: flex;
-    justify-content: center;
+    @include flex-center;
     padding-top: 13px;
     color: #848E97;
-    @include small-font;
+    @include fontMontserrat(400, 14px, 14px);
 }
 
 
-
-
-@media (max-width: 481px) {
-
+@media (max-width: 481.98px) {
 
     .header{
         max-height: 718px;
@@ -100,9 +90,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        // flex-direction: row;
     }
-
 
     .hover--logo, .header__text, .header-menu__items{
         display: none;
@@ -110,7 +98,6 @@
     
     .header-menu{
         max-width: 42%;
-    
     }
 
     .burger-menu {
@@ -120,7 +107,6 @@
         height: 22px;
         cursor: pointer;
         overflow: hidden;
-        
         
     &::before,
     &::after,
@@ -165,57 +151,48 @@
 }
 
     .header-menu__items.active{
-        min-width: 92%;
+        min-width: 91%;
+        margin: 0 auto;
         min-height: 379px;
         position: absolute;
         top: 103px;
-        right: 4.5%;
-        padding: 0 10px;
+        margin: 0 3px;
         display: flex;
-        justify-content: space-around;
         flex-direction: column;
-        height: 210px;
         background: #333333;
-    
-    
 
-    .header-menu__item{
-        display: flex;
-        align-items: center;
-        min-height: 88px;
-        vertical-align: middle;
-        border-bottom: 1px solid rgb(36, 36, 36);
-
+            .header-menu__item{
+                display: flex;
+                align-items: center;
+                min-height: 88px;
+                vertical-align: middle;
+                border-bottom: 3px solid rgba(70, 66, 66, 0.5);
+            }
+        
+            .header-menu__link{
+                color: $accent-color;
+                font-weight: 400;
+                font-size: 26px;
+                position: relative;
+                padding: 30px 0px 25px 25px;
+                width: 100%;
+            
+                &:active,
+                &:focus {
+                color: #8d81ac;
+                &::after {
+                  content: "";
+                  top: 9px;
+                  left: 1px;
+                  background: $primary-color;
+                  position: absolute;
+                  width: 8px;
+                  height: 53px;
+                }
+      }
     }
-
-    .header-menu__link{
-        color: $accent-color;
-        font-size: 26px;
-        font-weight: 400;
-        line-height: 26px;
-
-        &::before {
-            content: '';
-            width: 8px;
-            height: 54px;
-            background-color: $primary-color;
-            position: absolute;
-            top: 17px;
-            left: 2px;
-            transform: scale(0);
-            transition: all 0.2s ease;
-        }
-
-        &:active::before {
-            transform: scale(1);
-        }
-
-
-    }
-
-} 
+  } 
 }
-
 
 @media (min-width:482px) and (max-width:992.98px){
 
@@ -227,7 +204,6 @@
         max-width: 100%;
         background-color: #27262A;
         padding: 0 10px;
-        
     }
 
     .header-section{
@@ -241,7 +217,6 @@
     }
 
     .header-menu__items{
-        // min-width: 100%;
         max-width: 75%;
         margin: 0 auto;
         display: flex;
@@ -250,18 +225,82 @@
         align-items: start;
         padding-top: 23px;
         padding-bottom: 15px;
-   
-
     }
-.header__logo{
-    display: flex;
-    align-items: center;
-}
+
+    .header__logo{
+        display: flex;
+        align-items: center;
+    }
+
     .burger-menu{
         display: none;
     }
 
     .header-block{
+        display: flex;
+        align-items: center;
+    }
+
+    .header__text{
+        display: block;
+        padding-left: 17px;
+        @include fontMontserrat(700, 24px, 16px); 
+        text-transform: uppercase;
+        color: $primary-color;
+    }
+
+    .intro__title{
+        padding-top: 69px;
+        @include fontMontserrat(700, 72px, 72px); 
+    }
+
+    .intro__subtitle{  
+        font-size: 24px;
+        min-width: 92%;
+        text-transform: none;
+        @include fontLato(700, 24px, 24px);
+    }
+
+    .small--title{
+        padding-bottom: 433px;
+        @include fontMontserrat(400, 14px, 14px);
+        color: #848E97;
+        text-transform: uppercase;
+    }
+
+    .big--btn{
+        min-height: 62px;
+        min-width: 390px;
+    }
+
+    .intro__text{
+        padding-top: 18px;
+    }
+    
+}
+
+@media (min-width:482px) and (max-width:611.98px){
+    .small--title{
+        padding-bottom: 409px;
+    }
+}
+
+@media (min-width: 993px){
+
+    .header{
+        max-height: 800px;
+    }
+
+    .header-container{
+        max-width: 85%;
+        margin: 0 auto;
+        background-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 31px;
+    }
+
+    .header__logo{
         display: flex;
         align-items: center;
     }
@@ -276,116 +315,41 @@
         color: $primary-color;
     }
 
+    .header-menu{
+        min-width: 59%;
+    }
+
+    .header-menu__items{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .small--btn{
+        display: none;
+    }
+
+    .large--screen--btn{
+        display: inline-flex;
+    }
+
     .intro__title{
-        padding-top: 69px;
-        font-size: 72px;
-        line-height: 72px;
-        
+        padding-top: 115px;
+        @include fontMontserrat(700, 82px, 82px);
     }
 
     .intro__subtitle{  
-        font-size: 24px;
-        min-width: 82%;
-        text-transform: none;
+        @include fontLato(400, 30px, 30px);
     }
 
     .small--title{
-        padding-bottom: 435px;
-        @include small-font;
+        padding-bottom: 415px;
         color: #848E97;
-        text-transform: uppercase;
+        @include fontMontserrat(400, 16px, 16px);
     }
-
-
 
     .big--btn{
         min-height: 62px;
         min-width: 390px;
     }
-
-    .intro__text{
-        padding-top: 18px;
-    }
-    
-}
-
-@media (min-width: 993px){
-
-.header{
-    max-height: 800px;
-}
-.header-container{
-    max-width: 85%;
-    margin: 0 auto;
-    background-color: transparent;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 31px;
-}
-
-.header__logo{
-    display: flex;
-    align-items: center;
-}
-
-.header__text{
-    display: block;
-    padding-left: 17px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: $primary-color;
-}
-
-.header-menu{
-    min-width: 59%;
-}
-
-.header-menu__items{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.small--btn{
-    display: none;
-}
-
-.large--screen--btn{
-    display: inline-flex;
-}
-
-.header__text{
-    display: block;
-    padding-left: 17px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 16px;
-    text-transform: uppercase;
-    color: $primary-color;
-}
-
-.intro__title{
-    padding-top: 115px;
-    font-size: 82px;
-    line-height: 82px;
-}
-
-.intro__subtitle{  
-    font-size: 30px;
-
-}
-
-.small--title{
-    padding-bottom: 426px;
-    color: #848E97;
-    font-size: 16px;
-}
-
-.big--btn{
-    min-height: 62px;
-    min-width: 390px;
-}
-
 }
