@@ -1,0 +1,121 @@
+.about{
+    min-width: 320px;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: fit-content;
+    
+
+    &__container{
+        background: url(../img/testmonials.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: 0 10px;
+    }
+
+    &__title{
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 57px 0 8px;
+        @include fontMontserrat(700, 36px, 48px);
+        color: $accent-color;
+        text-align: center;
+    }
+
+    &__block{
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item{
+        @include flex-center;
+        flex-direction: column;
+        padding-top: 45px;
+
+        &-img{
+            display: block;
+            margin: 0 auto;
+        }
+
+        &-text{
+            max-width: 85%;
+            @include fontLato(700, 16px, 24px);
+            color: $accent-color;
+            font-style: italic;
+            text-align: center;
+            padding-top: 30px;
+
+        }
+
+    }
+
+    &__copyright{
+        max-width: 84%;
+        margin: 0 auto;
+        @include fontLato(400, 14px, 21px);
+        text-align: center;
+        color: #A291A5;
+        padding-top: 37px;
+        padding-bottom: 22px;
+        border-bottom: 2px solid #645766;
+    
+
+    }
+}
+
+
+@media (min-width:481.98px) and (max-width:992.98px){
+   .about{
+    &__title{
+        @include fontMontserrat(700, 42px, 42px); 
+        padding: 86px 0 8px;
+    }
+
+    &__block{
+        min-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+    }
+
+    &__item:nth-of-type(4){
+        margin-top: 40px;
+        }
+
+        &__copyright{
+            max-width: 88%;
+            margin: 0 auto;
+            padding-top: 68px;
+            @include fontLato(400, 14px, 21px);
+
+   }
+}
+
+}
+
+@media (min-width:992.98px){
+    .about{
+    
+        &__title{
+            @include fontMontserrat(700, 48px, 50px); 
+            padding: 108px 0 25px;
+        }
+    
+        &__block{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 70px;
+        }
+    
+        &__item:nth-of-type(4){
+            margin-top: 10px;
+            }
+    
+            &__copyright{
+                max-width: 88%;
+                margin: 0 auto;
+                padding-top: 119px;
+                @include fontLato(400, 14px, 21px);
+    
+       }
+    }
+    
+}

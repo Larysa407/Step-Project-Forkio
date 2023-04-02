@@ -18,7 +18,7 @@
 }
 
 @mixin fontLato($weight, $size, $line) {
-    font-family: "Lato, sans-serif";
+    font-family: "Lato";
     font-style: normal;
     font-weight: $weight;
     font-size: $size;
@@ -27,7 +27,7 @@
 
 
 @mixin fontMontserrat($weight, $size, $line) {
-    font-family: "Montserrat, sans-serif";
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: $weight;
     font-size: $size;
