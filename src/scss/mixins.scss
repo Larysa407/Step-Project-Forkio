@@ -5,8 +5,8 @@
 }
 
 @mixin btn {
-    min-width: 119px;
-    height: 37px;
+    min-width: 117px;
+    height: 35px;
     color: $accent-color;
     text-decoration: none;
     @include fontMontserrat(700, 15px, 15px);
@@ -15,6 +15,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 40px;
+    border: 1px solid $primary-color;
 }
 
 @mixin fontLato($weight, $size, $line) {

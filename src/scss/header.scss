@@ -2,9 +2,28 @@
     background: url(../img/intro.png) no-repeat;
     background-position: center center;
     background-size: cover;
+}
+
+.header-wrapper{
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 10px;
     min-width: 320px;
     max-width: 1200px;
-    margin: 0 auto;
+}
+
+.header__img{
+    position: relative;
+        &--hover{
+            position: absolute;
+            opacity: 0;
+        }
+}
+
+.header__logo:hover > .header__img--hover,
+.header__logo:hover > .header__text{
+    color: $accent-color;
+    opacity: 1;
 }
 
 .header-menu__link{
@@ -20,7 +39,6 @@
     &:hover{
         color: $primary-color;
         background-color: $accent-color;
-        border: 1px solid $primary-color;
     }
 }
 
@@ -51,7 +69,7 @@
     text-align: center; 
 }
 .intro__subtitle{
-    max-width: 80%;
+    max-width: 90%;
     padding-bottom: 18px;
     @include fontMontserrat(400, 18px, 24px);    
     color: $primary-color;
@@ -74,7 +92,7 @@
 }
 
 
-@media (max-width: 481.98px) {
+@media (max-width: $mobile) {
 
     .header{
         max-height: 718px;
@@ -95,9 +113,29 @@
         align-items: center;
     }
 
-    .hover--logo, .header__text, .header-menu__items{
+
+    .header__text, .header-menu__items{
         display: none;
     }
+
+    .header__img{
+    position: relative;
+    &:hover{
+        opacity: 0;
+    }
+        &--hover{
+            position: absolute;
+            opacity: 0;
+            top: 29px;
+            left: 16px;
+
+            &:hover{
+                opacity: 1;
+            }
+        }   
+    }
+    
+
     
     .header-menu{
         max-width: 42%;
@@ -220,7 +258,7 @@
     }
 
     .header-menu__items{
-        max-width: 75%;
+        max-width: 83%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
@@ -282,7 +320,7 @@
     
 }
 
-@media (min-width:482px) and (max-width:611.98px){
+@media (min-width:482px) and (max-width:636.98px){
     .small--title{
         padding-bottom: 409px;
     }
@@ -295,7 +333,7 @@
     }
 
     .header-container{
-        max-width: 85%;
+        max-width: 87%;
         margin: 0 auto;
         background-color: transparent;
         display: flex;
