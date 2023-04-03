@@ -7,7 +7,6 @@
 .header-wrapper{
     box-sizing: border-box;
     margin: 0 auto;
-    padding: 0 10px;
     min-width: 320px;
     max-width: 1200px;
 }
@@ -92,7 +91,7 @@
 }
 
 
-@media (max-width: $mobile) {
+@media (max-width: 480px) {
 
     .header{
         max-height: 718px;
@@ -102,10 +101,11 @@
         max-width: 100%;
         background-color: #27262A;
         padding: 0 10px;
+        
     }
 
     .header-section{
-        width: 97%;
+        max-width: 97%;
         margin: 0 auto;
         min-height: 103px;
         display: flex;
@@ -119,20 +119,16 @@
     }
 
     .header__img{
-    position: relative;
-    &:hover{
-        opacity: 0;
-    }
-        &--hover{
-            position: absolute;
-            opacity: 0;
-            top: 29px;
-            left: 16px;
-
-            &:hover{
-                opacity: 1;
+        position: relative;
+            &--hover{
+                position: absolute;
+                left: 16px;
+                opacity: 0;
             }
-        }   
+    }
+    
+    .header__img--hover:hover{
+        opacity: 1;
     }
     
 

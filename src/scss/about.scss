@@ -1,7 +1,7 @@
 .about{
     background: url(../img/testmonials.png) no-repeat;
     background-position: center;
-    background-size: 100% 110%;
+    background-size: 100% 105%;
     margin-top: 80px;
 
     &__container{
@@ -117,11 +117,4 @@
     
        }
     }
-}
-
-@media (min-width:1200px){
-    .about{
-        margin-top: 0;
-    }
-    
 }
