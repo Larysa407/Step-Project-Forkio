@@ -9,9 +9,10 @@
 
 @import  "header.scss";
 
-@import "main.scss";
-
+@import "editor.scss";
+@import "what.scss";
 @import "about.scss";
+@import "price.scss";
 @import "footer.scss";
 
 // body {
@@ -23,6 +24,9 @@
 .wrapper {
   min-height: 100%;
   overflow: hidden;
+}
+.page {
+  font-family: 'Montserrat', sans-serif;
 }
 .container {
     max-width: 1200px;
